@@ -1,4 +1,4 @@
-name: Build Flutter AAB
+name: Build Flutter APK and AAB
 on:
   workflow_dispatch:
 jobs:
@@ -21,8 +21,18 @@ jobs:
           echo "flutter.versionName=1.0" >> android/local.properties
           echo "flutter.versionCode=1" >> android/local.properties
       - run: flutter pub get
-      - run: flutter build appbundle --release
-      - uses: actions/upload-artifact@v4
+      - name: Build APK
+        run: flutter build apk --release
+      - name: Build AAB
+        run: flutter build appbundle --release
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 7
+      - name: Upload AAB
+        uses: actions/upload-artifact@v4
         with:
           name: release-aab
           path: build/app/outputs/bundle/release/app-release.aab

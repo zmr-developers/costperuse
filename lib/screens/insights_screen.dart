@@ -36,7 +36,7 @@ class InsightsScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Expanded(child: _card('Total Spent', '$${totalSpent.toStringAsFixed(2)}', Icons.attach_money, cs)),
+                      Expanded(child: _card('Total Spent', '\$${totalSpent.toStringAsFixed(2)}', Icons.attach_money, cs)),
                       const SizedBox(width: 12),
                       Expanded(child: _card('Total Uses', '$totalUses', Icons.repeat, cs)),
                     ],

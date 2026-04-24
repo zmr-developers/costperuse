@@ -143,8 +143,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text('$${cpu.toStringAsFixed(2)}/use', style: TextStyle(color: cs.primary, fontWeight: FontWeight.bold)),
-                              Text('$${p.cost.toStringAsFixed(2)} total', style: const TextStyle(fontSize: 11)),
+                              Text('\$${cpu.toStringAsFixed(2)}/use', style: TextStyle(color: cs.primary, fontWeight: FontWeight.bold)),
+                              Text('\$${p.cost.toStringAsFixed(2)} total', style: const TextStyle(fontSize: 11)),
                             ],
                           ),
                           onTap: () async {

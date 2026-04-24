@@ -21,6 +21,8 @@ jobs:
           echo "flutter.versionName=1.0" >> android/local.properties
           echo "flutter.versionCode=1" >> android/local.properties
       - run: flutter pub get
+      - name: Generate launcher icons
+        run: dart run flutter_launcher_icons
       - name: Build APK
         run: flutter build apk --release
       - name: Build AAB

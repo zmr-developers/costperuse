@@ -1,4 +1,4 @@
-name: Build Flutter APK
+name: Build Flutter AAB
 on:
   workflow_dispatch:
 jobs:
@@ -12,7 +12,7 @@ jobs:
           java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.6'
+          flutter-version: '3.27.0'
           channel: stable
       - name: Create local.properties
         run: |
@@ -21,9 +21,9 @@ jobs:
           echo "flutter.versionName=1.0" >> android/local.properties
           echo "flutter.versionCode=1" >> android/local.properties
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter build appbundle --release
       - uses: actions/upload-artifact@v4
         with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          name: release-aab
+          path: build/app/outputs/bundle/release/app-release.aab
           retention-days: 7

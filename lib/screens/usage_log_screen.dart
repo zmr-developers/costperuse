@@ -94,7 +94,7 @@ class _UsageLogScreenState extends State<UsageLogScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _stat('Total Cost', '\${widget.purchase.cost.toStringAsFixed(2)}', cs),
+                _stat('Total Cost', '\$${widget.purchase.cost.toStringAsFixed(2)}', cs),
                 _stat('Total Uses', '$count', cs),
                 _stat('Cost/Use', '\${cpu.toStringAsFixed(2)}', cs),
               ],
